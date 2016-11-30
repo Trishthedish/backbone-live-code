@@ -9,7 +9,7 @@ import Backbone from 'backbone';
 
 import _ from 'underscore';
 
-
+import Task from 'app/models/task'; // Since the Task model is defined in a separate file
 import TaskView from 'app/views/task_view';
 //To provide this structure, let's create a view for the entire app, a TaskListView
 
@@ -25,7 +25,9 @@ var TaskListView = Backbone.View.extend({
     this.listElement = this.$('.task-list');
 
     // Create a TaskView for each task
+    this.modelList = [];
     this.cardList = [];
+    
     this.taskData.forEach(function(task) {
       var card = new TaskView({
         task: task,
