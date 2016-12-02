@@ -27,7 +27,7 @@ var TaskListView = Backbone.View.extend({
     // Create a TaskView for each task
     this.modelList = [];
     this.cardList = [];
-    
+
     this.taskData.forEach(function(task) {
       var card = new TaskView({
         task: task,
